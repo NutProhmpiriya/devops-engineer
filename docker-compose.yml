@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  linux-practice:
+    image: ubuntu:latest
+    container_name: linux-practice
+    stdin_open: true # Keep STDIN open
+    tty: true       # Allocate a pseudo-TTY
+    volumes:
+      - ./practice-data:/data  # Mount a local directory for persistence
+    working_dir: /data
+    command: /bin/bash
