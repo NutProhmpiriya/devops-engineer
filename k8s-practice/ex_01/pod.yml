@@ -1,10 +1,22 @@
-apiVersion: v1 
+apiVersion: v1
 kind: Pod
-metadata: 
+metadata:
   name: nginx-pod
-spec: 
-  containers: 
+spec:
+  containers:
     - name: nginx
       image: nginx:latest
-      ports: 
+      ports:
         - containerPort: 80
+      volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+        - name: my-storage
+          mountPath: /mnt/data
+  volumes:
+    - name: config-volume
+      configMap:
+        name: example-config
+    - name: my-storage
+      persistentVolumeClaim:
+        claimName: my-pvc
