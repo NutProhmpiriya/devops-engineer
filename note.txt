@@ -1,0 +1,10 @@
+3hr/day x7day/week
+    basic: linux system, bash script, git
+    container: docker, k8s 
+    cicd: github, gitlab, jenkins
+    cloud: aws, google
+    IaC: terraform, ansible 
+    network: loadbalancing
+    testing
+
+
